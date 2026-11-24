@@ -1,0 +1,595 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIKRAM REDDY (Cricketer)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- fonts page ko block nahi karenge: slow net pe pehle page dikhega, font baad mein aayega -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&amp;family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Noto+Sans+Linear+A&amp;display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&amp;family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Noto+Sans+Linear+A&amp;display=swap" rel="stylesheet" media="all" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Noto+Sans+Linear+A&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Meta Pixel Code -->
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1090963057071381');fbq('track', 'PageView');</script><style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection">
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1090963057071381&ev=PageView&noscript=1" alt="" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    position: relative;
+    background: #04140D;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+    padding: 64px 28px;
+    text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---------- BACKGROUND (fiery gradient) ---------- */
+  .bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 48%, rgba(52, 211, 153, 0.28), transparent 70%),
+      radial-gradient(ellipse 90% 70% at 50% 60%, rgba(6, 78, 59, 0.45), transparent 80%),
+      #04140D;
+  }
+  /* dark vignette: text readable rahe + corners (watermark) chhup jaaye */
+  .bg::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 45%, transparent 0%, rgba(11, 5, 3, 0.55) 60%, rgba(11, 5, 3, 0.96) 100%),
+      linear-gradient(180deg, rgba(11, 5, 3, 0.7) 0%, transparent 25%, transparent 70%, rgba(11, 5, 3, 0.95) 100%);
+  }
+
+  /* ---------- rotating rune circles (GPU pe ghoomte hain, smooth) ---------- */
+  .runes {
+    --rs: min(150vw, 820px);
+    position: fixed; left: 50%; top: 50%; z-index: 0; pointer-events: none;
+    width: var(--rs); height: var(--rs);
+    margin: calc(var(--rs) / -2) 0 0 calc(var(--rs) / -2);
+    opacity: 0.6;
+    will-change: transform;
+    filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.85));
+  }
+  .runes-outer { animation: spin 60s linear infinite; }
+  .runes-inner { animation: spin 40s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .runes text { stroke: none; }
+  .mantra-dev { font-family: 'Noto Sans Linear A', sans-serif; font-size: 10px; fill: #6EE7B7; }
+  .mantra-cn  { font-family: 'Noto Sans Linear A', sans-serif; font-size: 11px; fill: #34D399; }
+  /* hidden signature */
+  .sig { font-family: 'Cinzel', serif; font-size: 6px; font-weight: 700; fill: #6EE7B7; opacity: 0.4; }
+
+  /* ---------- gold frame ---------- */
+  .frame {
+    position: fixed; inset: 14px; pointer-events: none; z-index: 1;
+    border: 1px solid rgba(52, 211, 153, 0.5);
+    outline: 1px solid rgba(52, 211, 153, 0.18);
+    outline-offset: 5px;
+  }
+  .frame span {
+    position: absolute; width: 12px; height: 12px;
+    background: #34D399; transform: rotate(45deg);
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.9);
+  }
+  .frame span:nth-child(1) { top: -6px; left: -6px; }
+  .frame span:nth-child(2) { top: -6px; right: -6px; }
+  .frame span:nth-child(3) { bottom: -6px; left: -6px; }
+  .frame span:nth-child(4) { bottom: -6px; right: -6px; }
+
+  /* ---------- rising embers ---------- */
+  .embers { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+  .embers span {
+    position: absolute; bottom: -10px; border-radius: 50%;
+    background: #6EE7B7;
+    box-shadow: 0 0 6px #10B981, 0 0 12px rgba(5, 150, 105, 0.8);
+    opacity: 0;
+    animation: rise linear infinite;
+  }
+  @keyframes rise {
+    0%   { transform: translate(0, 0); opacity: 0; }
+    10%  { opacity: 0.9; }
+    50%  { transform: translate(18px, -55vh); }
+    85%  { opacity: 0.7; }
+    100% { transform: translate(-12px, -108vh); opacity: 0; }
+  }
+
+  /* ---------- mist at bottom ---------- */
+  .mist {
+    position: fixed; left: -10%; right: -10%; bottom: -40px; height: 220px;
+    z-index: 1; pointer-events: none;
+    background: radial-gradient(ellipse 50% 60% at 30% 100%, rgba(200, 245, 225, 0.10), transparent 70%),
+                radial-gradient(ellipse 50% 60% at 75% 100%, rgba(200, 245, 225, 0.08), transparent 70%);
+    animation: drift 16s ease-in-out infinite alternate;
+  }
+  @keyframes drift { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
+
+  /* ---------- connecting line (SVG overlay) ---------- */
+  #wire { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 2; overflow: visible; }
+  #wire .track { fill: none; stroke: rgba(52, 211, 153, 0.18); stroke-width: 2; stroke-dasharray: 4 8; }
+  #wire .live {
+    fill: none; stroke: #34D399; stroke-width: 3; stroke-linecap: round;
+    filter: drop-shadow(0 0 6px rgba(16, 185, 129, 1));
+  }
+  #wire .dot {
+    fill: #ECFDF5;
+    filter: drop-shadow(0 0 10px #10B981) drop-shadow(0 0 3px #FFFFFF);
+    transition: opacity .2s ease;
+  }
+  #wire.done .live { animation: flash .5s ease-out; }
+  #wire.done .dot { opacity: 0; }
+  @keyframes flash {
+    0%   { stroke: #ECFDF5; stroke-width: 6; }
+    100% { stroke: #34D399; stroke-width: 3; }
+  }
+
+  /* ---------- content ---------- */
+  .head, .join { position: relative; z-index: 3; }
+  .head { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+  /* golden staff ornament above title */
+  .staff {
+    width: clamp(160px, 40vw, 260px); height: 10px; border-radius: 6px; position: relative;
+    background: linear-gradient(90deg, #064E3B 0%, #047857 18%, #A7F3D0 22%, #047857 26%, #047857 74%, #A7F3D0 78%, #047857 82%, #064E3B 100%);
+    box-shadow: 0 0 18px rgba(52, 211, 153, 0.7), inset 0 1px 0 rgba(220, 250, 235, 0.5);
+  }
+  .staff::before, .staff::after {
+    content: ''; position: absolute; top: -3px; width: 18px; height: 16px; border-radius: 4px;
+    background: linear-gradient(180deg, #ECFDF5, #34D399 50%, #065F46);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.9);
+  }
+  .staff::before { left: -6px; }
+  .staff::after { right: -6px; }
+
+  .title-row { display: flex; align-items: center; justify-content: center; gap: 20px; }
+  .logo {
+    flex: 0 0 auto; position: relative;
+    width: clamp(64px, 13vw, 104px);
+    height: clamp(64px, 13vw, 104px);
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #0C3A2A, #082018 70%);
+    color: #A7F3D0;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #34D399;
+    box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.15), 0 0 0 6px rgba(52, 211, 153, 0.5), 0 0 30px rgba(16, 185, 129, 0.45);
+  }
+  .logo::after {
+    content: ''; position: absolute; inset: -4px; border-radius: 50%; pointer-events: none;
+    box-shadow: 0 0 52px rgba(16, 185, 129, 0.85);
+    opacity: 0; will-change: opacity;
+    animation: pulse 3s ease-in-out infinite;
+  }
+  .logo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+  @keyframes pulse { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+  .names { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; }
+  h1 {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(30px, 8.5vw, 64px);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: 0.04em;
+    background: linear-gradient(100deg, #065F46 0%, #34D399 22%, #ECFDF5 50%, #34D399 72%, #065F46 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 18px rgba(16, 185, 129, 0.55)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.8));
+    background-position: 50% 0;
+  }
+  @keyframes goldshine {
+    0%, 100% { background-position: 100% 0; }
+    50%      { background-position: 0% 0; }
+  }
+  .alias {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(13px, 2.6vw, 21px);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #D1FAE5;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  }
+  .alias::before, .alias::after {
+    content: ''; width: clamp(18px, 4vw, 34px); height: 1px;
+    background: linear-gradient(90deg, transparent, #34D399);
+  }
+  .alias::after { background: linear-gradient(90deg, #34D399, transparent); }
+
+  .tagline {
+    font-family: 'Cinzel', serif; font-size: clamp(12px, 2.4vw, 15px); font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase; color: #34D399;
+    text-shadow: 0 0 12px rgba(5, 150, 105, 0.7);
+  }
+  .subs {
+    font-size: 17px; font-weight: 600; font-style: italic; color: #CFF5E2;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 16px; border-radius: 999px;
+    background: rgba(8, 24, 18, 0.75);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+  }
+
+  /* ---------- buttons ---------- */
+
+  /* outer = ghoomta hua aag ka border */
+  .join {
+    display: inline-flex; padding: 3px; border-radius: 999px; text-decoration: none;
+    overflow: hidden; isolation: isolate;
+    background: #065F46;
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.10), 0 0 34px rgba(16, 150, 110, 0.6), 0 12px 34px rgba(4, 60, 44, 0.65);
+    transition: transform .15s ease, filter .15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .join::before {
+    content: ''; position: absolute; left: 50%; top: 50%; z-index: -1;
+    width: 130%; aspect-ratio: 1;
+    background: conic-gradient(#065F46, #10B981, #D1FAE5, #34D399, #065F46 50%, #10B981, #ECFDF5, #34D399, #065F46);
+    will-change: transform;
+    animation: spinBorder 3s linear infinite;
+  }
+  @keyframes spinBorder {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  .join:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+  /* inner = gold body */
+  .join .core {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; gap: 14px;
+    min-height: 66px; padding: 8px 26px 8px 9px; border-radius: 999px;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(255, 255, 255, 0.45), transparent 60%),
+      linear-gradient(180deg, #D1FAE5 0%, #34D399 42%, #059669 78%, #065F46 100%);
+    color: #FFFFFF;
+    box-shadow: inset 0 1px 0 rgba(236, 253, 245, 0.9), inset 0 -3px 8px rgba(4, 50, 36, 0.45);
+  }
+  /* light sweep */
+  .join .core::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 40%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    will-change: transform;
+    animation: sweep 3.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes sweep {
+    0%        { transform: translateX(-150%) skewX(-20deg); }
+    60%, 100% { transform: translateX(330%) skewX(-20deg); }
+  }
+
+  /* Telegram icon badge */
+  .join .badge {
+    position: relative; z-index: 1; flex: 0 0 auto;
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #0C3A2A, #082018 75%);
+    color: #A7F3D0;
+    border: 1.5px solid #D1FAE5;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.7), inset 0 0 10px rgba(52, 211, 153, 0.35);
+  }
+  .join .badge svg { margin-left: -2px; filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.9)); }
+  .join .badge::after {
+    content: ''; position: absolute; inset: -5px; border-radius: 50%;
+    border: 1px dashed rgba(4, 50, 36, 0.55);
+    will-change: transform;
+    animation: spin 8s linear infinite;
+  }
+
+  .join .txt { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+  .join .label {
+    font-family: 'Cinzel', serif; font-size: 20px; font-weight: 900; letter-spacing: 0.08em;
+    text-shadow: 0 1px 0 rgba(220, 250, 235, 0.6);
+  }
+  .join .sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; font-style: italic;
+    color: #D1FAE5; letter-spacing: 0.02em;
+  }
+
+  /* arrow nudge */
+  .join .arrow {
+    position: relative; z-index: 1; margin-left: 4px;
+    display: flex; color: #ECFDF5;
+    animation: nudge 1.4s ease-in-out infinite;
+  }
+  @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+  .join.send { animation: send .6s ease-out; }
+  @keyframes send {
+    0%   { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8), 0 12px 34px rgba(4, 60, 44, 0.65); }
+    100% { box-shadow: 0 0 0 22px rgba(52, 211, 153, 0), 0 12px 34px rgba(4, 60, 44, 0.65); }
+  }
+
+  .join.hit { animation: press .45s cubic-bezier(.3, 1.6, .5, 1), send .7s ease-out; }
+  @keyframes press {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(0.9); filter: brightness(1.3); }
+    100% { transform: scale(1); }
+  }
+
+  /* chhoti screens: button aur alias ek line mein rahein */
+  .alias, .join .label, .join .sub { white-space: nowrap; }
+  @media (max-width: 400px) {
+    .join .core { gap: 10px; padding: 7px 18px 7px 7px; min-height: 60px; }
+    .join .badge { width: 42px; height: 42px; }
+    .join .label { font-size: clamp(15px, 4.6vw, 18px); }
+    .join .sub { font-size: clamp(11.5px, 3.4vw, 13px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .embers, .mist, .join .core::before { display: none; }
+    .join::before, .join .arrow, .join .badge::after, .logo::after { animation: none; }
+    .runes { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true"></div>
+
+  <!-- rotating rune circles -->
+  <svg class="runes runes-outer" viewBox="0 0 400 400" aria-hidden="true">
+    <defs>
+      <path id="ringOuter" d="M200,42 a158,158 0 1,1 0,316 a158,158 0 1,1 0,-316"></path>
+      <!-- hidden signature ring (190 aur 176 wale circles ke beech) -->
+      <path id="ringSig" d="M200,17 a183,183 0 1,1 0,366 a183,183 0 1,1 0,-366"></path>
+    </defs>
+    <g fill="none" stroke="#34D399">
+      <circle cx="200" cy="200" r="190" stroke-width="1.2" opacity="0.7"></circle>
+      <circle cx="200" cy="200" r="176" stroke-width="0.6" stroke-dasharray="2 6" opacity="0.8"></circle>
+      <g stroke-width="1.4" opacity="0.85">
+        <path d="M200 14 l6 10 h-12 z"></path><path d="M200 386 l6 -10 h-12 z"></path>
+        <path d="M14 200 l10 6 v-12 z"></path><path d="M386 200 l-10 6 v-12 z"></path>
+        <path d="M68 68 l5 11 l6 -6 z"></path><path d="M332 68 l-5 11 l-6 -6 z"></path>
+        <path d="M68 332 l5 -11 l6 6 z"></path><path d="M332 332 l-5 -11 l-6 6 z"></path>
+      </g>
+      <g stroke-width="1" opacity="0.6">
+        <path d="M120 36 q6 -6 12 0 t12 0"></path><path d="M256 36 q6 -6 12 0 t12 0"></path>
+        <path d="M120 364 q6 6 12 0 t12 0"></path><path d="M256 364 q6 6 12 0 t12 0"></path>
+        <path d="M36 120 q-6 6 0 12 t0 12"></path><path d="M36 256 q-6 6 0 12 t0 12"></path>
+        <path d="M364 120 q6 6 0 12 t0 12"></path><path d="M364 256 q6 6 0 12 t0 12"></path>
+      </g>
+      <!-- HIDDEN SIGNATURE: bahut halka + chhota, dhyan se dekhne pe hi dikhega -->
+      <text class="sig">
+        <textPath href="#ringSig" textLength="1145" lengthAdjust="spacing">ADS RUN BY WUKONG · ADS RUN BY WUKONG · ADS RUN BY WUKONG · ADS RUN BY WUKONG · ADS RUN BY WUKONG · ADS RUN BY WUKONG ·</textPath>
+      </text>
+      <!-- MANTRA (outer ring): Linear A script — 3500+ saal purani, aaj tak koi decode nahi kar paaya -->
+      <text class="mantra-dev">
+        <textPath href="#ringOuter" textLength="985" lengthAdjust="spacing">𐘀𐘇𐘚𐘰 ✦ 𐘋𐘢𐘁𐙀 ✦ 𐘞𐘅𐘲𐘍 ✦ 𐘓𐘀𐘸𐘊 ✦ 𐘬𐘃𐘔𐙃 ✦ 𐘐𐘹𐘆𐘡 ✦ 𐘗𐘪𐘈𐘽 ✦ 𐘎𐘤𐘂𐘴 ✦ 𐘛𐘱𐘉𐘧 ✦</textPath>
+      </text>
+    </g>
+  </svg>
+  <svg class="runes runes-inner" viewBox="0 0 400 400" aria-hidden="true">
+    <defs>
+      <path id="ringInner" d="M200,90 a110,110 0 1,1 0,220 a110,110 0 1,1 0,-220"></path>
+    </defs>
+    <g fill="none" stroke="#10B981">
+      <circle cx="200" cy="200" r="140" stroke-width="1" opacity="0.6"></circle>
+      <circle cx="200" cy="200" r="128" stroke-width="0.6" stroke-dasharray="10 4 2 4" opacity="0.7"></circle>
+      <polygon points="200,72 311,264 89,264" stroke-width="0.8" opacity="0.4"></polygon>
+      <polygon points="200,328 311,136 89,136" stroke-width="0.8" opacity="0.4"></polygon>
+      <!-- MANTRA (inner ring): Linear A — alag sequence -->
+      <text class="mantra-cn">
+        <textPath href="#ringInner" textLength="685" lengthAdjust="spacing">𐘠𐘌𐘶 ✦ 𐘄𐘟𐘯 ✦ 𐘑𐘦𐘺 ✦ 𐘕𐘣𐘷 ✦ 𐘜𐘮𐘻 ✦ 𐘒𐘥𐘳 ✦</textPath>
+      </text>
+    </g>
+  </svg>
+
+  <div class="frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <div class="embers" aria-hidden="true">
+    <span style="width:3px;height:3px;left:6%;animation-duration:9s;animation-delay:0s"></span>
+    <span style="width:2px;height:2px;left:15%;animation-duration:12s;animation-delay:2s"></span>
+    <span style="width:4px;height:4px;left:24%;animation-duration:8s;animation-delay:4s"></span>
+    <span style="width:2px;height:2px;left:33%;animation-duration:11s;animation-delay:1s"></span>
+    <span style="width:3px;height:3px;left:42%;animation-duration:10s;animation-delay:5s"></span>
+    <span style="width:2px;height:2px;left:51%;animation-duration:13s;animation-delay:3s"></span>
+    <span style="width:4px;height:4px;left:60%;animation-duration:9s;animation-delay:6s"></span>
+    <span style="width:2px;height:2px;left:69%;animation-duration:12s;animation-delay:0.5s"></span>
+    <span style="width:3px;height:3px;left:78%;animation-duration:10s;animation-delay:7s"></span>
+    <span style="width:2px;height:2px;left:87%;animation-duration:11s;animation-delay:2.5s"></span>
+    <span style="width:4px;height:4px;left:94%;animation-duration:8s;animation-delay:4.5s"></span>
+    <span style="width:2px;height:2px;left:48%;animation-duration:14s;animation-delay:8s"></span>
+  </div>
+
+  <div class="mist" aria-hidden="true"></div>
+
+  <svg id="wire" aria-hidden="true" width="360" height="641" class="done">
+    <path class="track" id="trackL" d="M45.083335876464844,160.33333587646484 H34 Q10,160.33333587646484 10,184.33333587646484 V457 Q10,481 34,481 H45.083335876464844"></path>
+    <path class="track" id="trackR" d="M314.91146087646484,160.33333587646484 H326 Q350,160.33333587646484 350,184.33333587646484 V457 Q350,481 326,481 H314.91146087646484"></path>
+    <path class="live" id="liveL" d="M45.083335876464844,160.33333587646484 H34 Q10,160.33333587646484 10,184.33333587646484 V457 Q10,481 34,481 H45.083335876464844" style="stroke-dasharray: 372.748; stroke-dashoffset: 0;"></path>
+    <path class="live" id="liveR" d="M314.91146087646484,160.33333587646484 H326 Q350,160.33333587646484 350,184.33333587646484 V457 Q350,481 326,481 H314.91146087646484" style="stroke-dasharray: 372.759; stroke-dashoffset: 0;"></path>
+    <circle class="dot" id="dotL" r="5" cx="45.083335876464844" cy="481"></circle>
+    <circle class="dot" id="dotR" r="5" cx="314.9114685058594" cy="481"></circle>
+  </svg>
+
+  <!-- CTA 1 (top) -->
+  <a href="https://t.me/+H5k1R-WVJcJiY2Q1" class="join join-top send" id="cta-btn" data-tgtrack-cta="1">
+    <span class="core">
+      <span class="badge"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 11.5l6 2.2 2.3 6.3 3.4-4.1 4.8 3.6z"></path><path d="M8.5 13.7l10-7.2"></path></svg></span>
+      <span class="txt"><span class="label">JOIN CHANNEL</span><span class="sub">Instant access on Telegram</span></span>
+      <span class="arrow"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span>
+    </span>
+  </a>
+
+  <div class="head" id="head">
+    <div class="staff" aria-hidden="true"></div>
+    <div class="title-row">
+      <!-- LOGO: apna logo lagane ke liye "MM" hata ke ye daalo: <img src="logo.jpg" alt="MM Premium"> -->
+      <div class="logo"><a href="https://ibb.co/S4WZmz6D"><img src="https://i.ibb.co/MxWJ1mgy/IMG-20261124-170655-383.jpg" alt="IMG 20261124 170655 383" border="0"></a></div>
+      <div class="names">
+        <h1>Vikram Reddy </h1>
+        <div class="alias">Cricketer</div>
+      </div>
+    </div>
+
+    <!-- TAGLINE: apni line daal sakte ho -->
+    <div class="tagline">Read the Game</div>
+
+    <div class="subs">
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <!-- SUBS COUNT: yahan apna asli number daalo -->
+      51.7K subscribers
+    </div>
+  </div>
+
+  <!-- CTA 2 (bottom) -->
+  <a href="https://t.me/+H5k1R-WVJcJiY2Q1" class="join join-bottom hit" id="cta-btn" data-tgtrack-cta="1">
+    <span class="core">
+      <span class="badge"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 11.5l6 2.2 2.3 6.3 3.4-4.1 4.8 3.6z"></path><path d="M8.5 13.7l10-7.2"></path></svg></span>
+      <span class="txt"><span class="label">JOIN CHANNEL</span><span class="sub">Instant access on Telegram</span></span>
+      <span class="arrow"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span>
+    </span>
+  </a>
+
+<!-- Design only: line animation only (koi auto-open nahi, koi tracking event nahi) -->
+<script>
+  (function () {
+    var DURATION = 3000;
+
+    var btnTop = document.querySelector('.join-top');
+    var btnBottom = document.querySelector('.join-bottom');
+    var head = document.getElementById('head');
+
+    var wire = document.getElementById('wire');
+    var trackL = document.getElementById('trackL'), trackR = document.getElementById('trackR');
+    var liveL = document.getElementById('liveL'),   liveR = document.getElementById('liveR');
+    var dotL = document.getElementById('dotL'),     dotR = document.getElementById('dotR');
+
+    var start = null, rafId = null, finished = false, cancelled = false;
+
+    function build() {
+      var sx = window.scrollX, sy = window.scrollY;
+      var a = btnTop.getBoundingClientRect();
+      var b = btnBottom.getBoundingClientRect();
+      var h = head.getBoundingClientRect();
+      var docW = document.documentElement.clientWidth;
+      var docH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+
+      wire.setAttribute('width', docW);
+      wire.setAttribute('height', docH);
+
+      var gap = 32;
+      var xl = Math.max(10, Math.min(a.left, b.left, h.left) - gap) + sx;
+      var xr = Math.min(docW - 10, Math.max(a.right, b.right, h.right) + gap) + sx;
+      var y0 = a.top + a.height / 2 + sy;
+      var y1 = b.top + b.height / 2 + sy;
+
+      var aL = a.left + sx, bL = b.left + sx, aR = a.right + sx, bR = b.right + sx;
+      var r = Math.max(0, Math.min(24, (y1 - y0) / 2, aL - xl, bL - xl, xr - aR, xr - bR));
+
+      var dL = 'M' + aL + ',' + y0 +
+               ' H' + (xl + r) + ' Q' + xl + ',' + y0 + ' ' + xl + ',' + (y0 + r) +
+               ' V' + (y1 - r) + ' Q' + xl + ',' + y1 + ' ' + (xl + r) + ',' + y1 +
+               ' H' + bL;
+      var dR = 'M' + aR + ',' + y0 +
+               ' H' + (xr - r) + ' Q' + xr + ',' + y0 + ' ' + xr + ',' + (y0 + r) +
+               ' V' + (y1 - r) + ' Q' + xr + ',' + y1 + ' ' + (xr - r) + ',' + y1 +
+               ' H' + bR;
+
+      trackL.setAttribute('d', dL); liveL.setAttribute('d', dL);
+      trackR.setAttribute('d', dR); liveR.setAttribute('d', dR);
+    }
+
+    function setProgress(p) {
+      [[liveL, dotL], [liveR, dotR]].forEach(function (pair) {
+        var path = pair[0], dot = pair[1];
+        var len = path.getTotalLength();
+        path.style.strokeDasharray = len;
+        path.style.strokeDashoffset = len * (1 - p);
+        var pt = path.getPointAtLength(len * p);
+        dot.setAttribute('cx', pt.x);
+        dot.setAttribute('cy', pt.y);
+      });
+    }
+
+    function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+    function hit() {
+      finished = true;
+      setProgress(1);
+      wire.classList.add('done');
+      btnBottom.classList.remove('hit');
+      void btnBottom.offsetWidth;
+      btnBottom.classList.add('hit');
+      // auto-open band hai: sirf animation, Telegram user ke click pe hi khulega
+    }
+
+    function frame(ts) {
+      if (cancelled) return;
+      if (start === null) start = ts;
+      var t = Math.min((ts - start) / DURATION, 1);
+      setProgress(ease(t));
+      if (t < 1) rafId = requestAnimationFrame(frame);
+      else hit();
+    }
+
+    function stop() {
+      cancelled = true;
+      if (rafId) cancelAnimationFrame(rafId);
+    }
+
+    btnTop.addEventListener('click', stop);
+    btnBottom.addEventListener('click', stop);
+
+    var lastW = document.documentElement.clientWidth, pending = false;
+    window.addEventListener('resize', function () {
+      var w = document.documentElement.clientWidth;
+      if (w === lastW || pending) return;
+      lastW = w; pending = true;
+      requestAnimationFrame(function () {
+        pending = false;
+        build();
+        if (finished) setProgress(1);
+      });
+    });
+
+    function go() {
+      build();
+      setProgress(0);
+      btnTop.classList.add('send');
+      rafId = requestAnimationFrame(frame);
+    }
+
+    var started = false;
+    function goOnce() { if (started) return; started = true; go(); }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
+      if (started) { build(); if (finished) setProgress(1); } // font aane ke baad line sahi jagah
+      else goOnce();
+    });
+    setTimeout(goOnce, 1200); // slow net pe font ka intezaar max 1.2s
+  })();
+</script>
+
+    <script>
+    (function () {
+      document.addEventListener("click", function (e) {
+        var a = e.target && e.target.closest && e.target.closest("#cta-btn");
+        if (!a) return;
+        if (typeof gtag_report_conversion !== "function") return;
+        var raw = (a.getAttribute("href") || "").trim();
+        var dest = (raw && raw !== "#" && raw.indexOf("http") === 0) ? raw : void 0;
+        e.preventDefault();
+        try {
+          gtag_report_conversion(dest);
+        } catch (err1) {}
+      }, true);
+    })();
+    </script>
+
+    <script src=""></script>
+    <script>document.getElementById('cta-btn').setAttribute('data-tgtrack-cta','1');</script>
+
+
+</body></html>
